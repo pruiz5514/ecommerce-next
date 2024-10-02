@@ -30,7 +30,7 @@ const Signup = ()=>{
             
             if(newUser){}
             try{
-                const response = await signUp(newUser);
+                await signUp(newUser);
                 event.currentTarget.reset();
                 router.push("/login")
             } catch(e){
