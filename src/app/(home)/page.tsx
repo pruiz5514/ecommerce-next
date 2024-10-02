@@ -9,9 +9,7 @@ export default function Home() {
           <p className='hero-p'>Descubre todos tus productos favoritos aquí.</p>
         </div>
       </main>
-        
 
-      
     </>
   );
 }
