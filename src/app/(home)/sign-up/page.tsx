@@ -5,11 +5,11 @@ import Main from "@/components/Main/Main"
 import Input from '@/components/UI/Input/Input'
 import Button from '@/components/UI/Button/Button'
 import { signUp } from '@/services/auth'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
-const router = useRouter();
 
 const Signup = ()=>{
+    const router = useRouter();
     const handleSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
