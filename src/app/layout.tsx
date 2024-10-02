@@ -3,6 +3,7 @@ import "./globals.css";
 import { Roboto } from "next/font/google";
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import Footer from "@/components/Footer/Footer";
+import { Providers } from "@/redux/provider";
 
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "400", "700","900"], });
@@ -21,8 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <StyledComponentsRegistry>
-          {children}
-          <Footer/>
+          <Providers>
+            {children}
+            <Footer/>
+          </Providers>
         </StyledComponentsRegistry>
       </body>
     </html>
