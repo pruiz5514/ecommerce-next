@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
+import Footer from "@/components/Footer/Footer";
+
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "400", "700","900"], });
 
@@ -20,6 +22,7 @@ export default function RootLayout({
       <body >
         <StyledComponentsRegistry>
           {children}
+          <Footer/>
         </StyledComponentsRegistry>
       </body>
     </html>
