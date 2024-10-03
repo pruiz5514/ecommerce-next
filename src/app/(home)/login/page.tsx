@@ -32,11 +32,6 @@ const Signup = ()=>{
             console.log("No se pudo acceder")
             event.currentTarget.reset();
         }
-    
-        // if(response?.ok){
-        //     router.push("")
-        // }
-        
     }
     return(
         <>
