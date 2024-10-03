@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import Footer from "@/components/Footer/Footer";
 import { Providers } from "@/redux/provider";
+import SessionAuthProvider from "@/context/SessionAuthProvider";
 
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "400", "700","900"], });
@@ -21,12 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <StyledComponentsRegistry>
-          <Providers>
-            {children}
-            <Footer/>
-          </Providers>
-        </StyledComponentsRegistry>
+        <SessionAuthProvider>
+          <StyledComponentsRegistry>
+            <Providers>
+              {children}
+              <Footer />
+            </Providers>
+          </StyledComponentsRegistry>
+        </SessionAuthProvider>
       </body>
     </html>
   );
