@@ -31,6 +31,7 @@ const Signup = ()=>{
             
         }catch{
             console.log("No se pudo acceder")
+            event.currentTarget.reset();
         }
     
         // if(response?.ok){
