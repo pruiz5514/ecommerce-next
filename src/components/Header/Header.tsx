@@ -5,9 +5,15 @@ import { BurgerButton, CloseHeaderButton, HeaderAside, HeaderAsideContainer, Hea
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import Select from "../UI/Select/Select";
+import changeLanguage from "@/actions/language";
 
 const Header = ({ children }: PropsWithChildren) => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const handleChange = async(event:React.ChangeEvent<HTMLSelectElement>)=>{
+        const language = event.currentTarget.value;   
+        await changeLanguage(language)
+    }
     return (
         <HeaderStyle>
             <HeaderSection>
@@ -23,11 +29,23 @@ const Header = ({ children }: PropsWithChildren) => {
                             <IoClose />
                         </CloseHeaderButton>
                         <HeaderUlAside>
+                            <li>
+                                <Select onChange={handleChange}>
+                                    <option value="es" selected>Español</option>
+                                    <option value="en">English</option>
+                                </Select>
+                            </li>
                             {children}
                         </HeaderUlAside>
                     </HeaderAside>
                 </HeaderAsideContainer>
                 <HeaderUl>
+                    <li>
+                        <Select onChange={handleChange}>
+                            <option value="es" selected>Español</option>
+                            <option value="en">English</option>
+                        </Select>
+                    </li>
                     {children}
                 </HeaderUl>
             </HeaderNav>
