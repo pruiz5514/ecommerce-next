@@ -1,9 +1,11 @@
 'use client'
+import { useTranslations } from "next-intl";
 import { FooterStyled, Title, ContainerLogo, ContainerSocialMedia, TitleCoppyRight, ContainerInfo, FacebookStyled, WhatsappStyled, InstagramStyled } from "./footer-style";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+    const t = useTranslations('Footer');
     return (
         <FooterStyled>
             <ContainerLogo>
@@ -11,7 +13,7 @@ const Footer = () => {
                 <Title>Ecommerce next.js</Title>
             </ContainerLogo>
             <ContainerInfo>
-                <TitleCoppyRight>© Copyright 2024 Todos los derechos reservados</TitleCoppyRight>
+                <TitleCoppyRight>© Copyright 2024 {t("rights")}</TitleCoppyRight>
                 <ContainerSocialMedia>
                     <Link href="https://web.facebook.com/" target="_blanck"><FacebookStyled /></Link>
                     <Link href="https://web.whatsapp.com/" target="_blanck"><WhatsappStyled /></Link>
