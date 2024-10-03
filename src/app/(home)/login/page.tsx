@@ -7,7 +7,6 @@ import Input from "@/components/UI/Input/Input"
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 
-
 const Signup = ()=>{
     const router = useRouter()
     const handleSumbit = async(event: React.FormEvent<HTMLFormElement>)=>{
