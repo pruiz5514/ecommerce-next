@@ -5,7 +5,6 @@ import { BurgerButton, CloseHeaderButton, HeaderAside, HeaderAsideContainer, Hea
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
-import { useSession } from "next-auth/react";
 
 const Header = ({ children }: PropsWithChildren) => {
     const [isOpen, setIsOpen] = useState(false)

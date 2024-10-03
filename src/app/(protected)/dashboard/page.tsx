@@ -1,6 +1,4 @@
 "use client"
-import LogoutButton from "@/components/UI/LogoutButton/LogoutButton"
-import { useSession } from "next-auth/react";
 
 const Dashboard = ()=>{
     // const { data: session, status } = useSession();

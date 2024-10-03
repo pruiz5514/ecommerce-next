@@ -9,7 +9,7 @@ const handler = NextAuth({
                 email: { label: "Username", type: "text", placeholder: "jsmith" },
                 password: { label: "Password", type: "password" }
             },
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 const res = await fetch("https://simuate-test-backend-1.onrender.com/api/auth/login", {
                     method: 'POST',
                     headers: {
