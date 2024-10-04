@@ -28,7 +28,7 @@ export const TitleCard = styled.h2`
     margin-bottom: 10px;
     font-size: 18px;
  `
-export const AddButton = styled.span`
+export const AddButton = styled.button`
     width: 32px;
     height: 32px;
     border-radius: 50%;

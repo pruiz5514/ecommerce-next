@@ -1,15 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { IProducts } from "@/types/IProducts";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface CartState {
+    cart: IProducts[];
+}
+
+const initialState: CartState = {
+    cart: []
+};
 
 export const cartSlice = createSlice({
     name: 'cart',
-    initialState: {
-        cart: 0
-    },
+    initialState,
     reducers: {
-        increment: (state) => {
-            state.cart += 1
+        addProduct: (state, action: PayloadAction<IProducts>) => {
+            state.cart.push(action.payload)
         }
     }
 })
-export const { increment } = cartSlice.actions
+export const { addProduct } = cartSlice.actions
 export default cartSlice.reducer;
