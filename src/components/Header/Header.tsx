@@ -8,12 +8,19 @@ import { IoClose } from "react-icons/io5";
 import Select from "../UI/Select/Select";
 import changeLanguage from "@/actions/language";
 
+
 const Header = ({ children }: PropsWithChildren) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleChange = async(event:React.ChangeEvent<HTMLSelectElement>)=>{
         const language = event.currentTarget.value;   
-        await changeLanguage(language)
+        await changeLanguage(language);
+        sessionStorage.setItem("language",language)
     }
+    let lang = sessionStorage.getItem("language");
+    if(!lang){
+        lang = 'es'
+    }
+    
     return (
         <HeaderStyle>
             <HeaderSection>
@@ -30,8 +37,8 @@ const Header = ({ children }: PropsWithChildren) => {
                         </CloseHeaderButton>
                         <HeaderUlAside>
                             <li>
-                                <Select onChange={handleChange}>
-                                    <option value="es" selected>Español</option>
+                                <Select onChange={handleChange} value={lang}>
+                                    <option value="es">Español</option>
                                     <option value="en">English</option>
                                 </Select>
                             </li>
@@ -41,8 +48,8 @@ const Header = ({ children }: PropsWithChildren) => {
                 </HeaderAsideContainer>
                 <HeaderUl>
                     <li>
-                        <Select onChange={handleChange}>
-                            <option value="es" selected>Español</option>
+                        <Select onChange={handleChange} value={lang}> 
+                            <option value="es">Español</option>
                             <option value="en">English</option>
                         </Select>
                     </li>
