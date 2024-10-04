@@ -29,7 +29,7 @@ export const HeaderUl = styled.ul`
     display: none;
     gap: 40px;
     color: var(--white);
-    font-size: 20px;
+    font-size: 18px;
     align-items: center;
     @media (min-width: 950px){
         display: flex;

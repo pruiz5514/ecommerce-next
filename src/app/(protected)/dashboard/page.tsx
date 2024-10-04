@@ -1,20 +1,36 @@
 "use client"
-import LogoutButton from "@/components/UI/LogoutButton/LogoutButton"
-import { useSession } from "next-auth/react";
+import Card from "@/components/Card/Card"
+import Main from "@/components/Main/Main"
+import { getProducts } from "@/services/products"
+import { IProducts } from "@/types/IProducts"
+import { useEffect, useState } from "react"
+import './dashboard.css'
+
 
 const Dashboard = ()=>{
-    const { data: session, status } = useSession();
-    if (status === "loading") {
-        return <p>Loading...</p>;
-    }
+    const [products, setProducts] = useState<IProducts[]>([]);
+
+    useEffect(()=>{
+        const fetchProduct = async()=>{
+            try{
+                setProducts(await getProducts())
+            }catch(e){
+                console.log(e);
+                alert("No se pudo acceder a la informacion")
+            }
+        }
+        fetchProduct();
+    },[]);
+
     return(
-        
         <>
-            <div>oe</div>
-            <pre>
-                <code>{JSON.stringify(session, null, 2)}</code>
-            </pre>
-            <LogoutButton/>
+            <Main>
+                <section className="cards-section">
+                    {products.map((product:IProducts)=>(
+                        <Card key={product.id} product={product}/>
+                    ))}
+                </section>
+            </Main>  
         </>
     )
 }
