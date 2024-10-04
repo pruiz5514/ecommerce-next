@@ -5,6 +5,7 @@ import { getProducts } from "@/services/products"
 import { IProducts } from "@/types/IProducts"
 import { useEffect, useState } from "react"
 import './dashboard.css'
+import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 
 
 const Dashboard = ()=>{
