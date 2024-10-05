@@ -4,11 +4,11 @@ import Main from "@/components/Main/Main"
 import { getProducts } from "@/services/products"
 import { IProducts } from "@/types/IProducts"
 import { useEffect, useState } from "react"
-import './dashboard.css'
+import './store.css'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 
 
-const Dashboard = ()=>{
+const Store = ()=>{
     const [products, setProducts] = useState<IProducts[]>([]);
 
     useEffect(()=>{
@@ -36,4 +36,4 @@ const Dashboard = ()=>{
     )
 }
 
-export default Dashboard
+export default Store

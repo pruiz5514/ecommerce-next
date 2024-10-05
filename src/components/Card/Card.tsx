@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({product})=>{
 
                 { !added ? (
                     <AddButton onClick={addProductHandle}><BsCartPlus/></AddButton>
-                )  : <AddButton ><FaCheck /></AddButton>}
+                )  : <AddButton ><FaCheck style={{color:"green"}}/></AddButton>}
             </CardContainer>
         </>
     )

@@ -24,9 +24,9 @@ const ProtectedHeader = () => {
 
     return(
         <Header>
-            <li><Link href="/dashboard">Inicio</Link></li>
+            <li><Link href="/store">Inicio</Link></li>
             {categories.map((category:string)=>
-                <li key={category}>{category}</li>
+                <li key={category}><Link href={`/store/${category}`}>{category} </Link></li>
             )}
             <li style={{display:'flex', justifyContent:'center',alignItems: 'center', gap:'5px'}}>{cart.length} <FaCartShopping/></li>
             <li><LogoutButton/></li>
