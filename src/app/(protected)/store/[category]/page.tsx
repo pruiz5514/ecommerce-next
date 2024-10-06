@@ -1,10 +1,11 @@
 "use client"
-import Card from "@/components/Card/Card"
+
 import Main from "@/components/Main/Main"
 import {getProductsByCategory } from "@/services/products"
 import { IProducts } from "@/types/IProducts"
 import { useEffect, useState } from "react"
 import '../store.css'
+import Card from "@/components/Card/Card"
 
 const Category: React.FC<{ params: { category: string } }> = ({params})=>{
     const [products, setProducts] = useState<IProducts[]>([]);

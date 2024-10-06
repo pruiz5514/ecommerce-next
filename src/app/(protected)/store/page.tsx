@@ -1,11 +1,12 @@
 "use client"
-import Card from "@/components/Card/Card"
+
 import Main from "@/components/Main/Main"
 import { getProducts } from "@/services/products"
 import { IProducts } from "@/types/IProducts"
 import { useEffect, useState } from "react"
 import './store.css'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
+import Card from "@/components/Card/Card"
 
 
 const Store = ()=>{

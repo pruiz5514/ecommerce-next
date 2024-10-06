@@ -22,7 +22,7 @@ const Signup = ()=>{
         try{
             const response = await signIn("credentials", user);
             if(response?.ok){
-                router.push("/dashboard")
+                router.push("/store")
             }else{
                 alert("Credenciales invalidas")
                 event.currentTarget.reset();
